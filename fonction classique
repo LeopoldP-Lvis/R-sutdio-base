@@ -1,0 +1,25 @@
+# Les bases pour gerer sont fichier dans R , le voir fichier , le trier, le recoder
+names(Dataframe) # obtenir les noms des colonnes
+install.packages(packages / library(pakages) #installer et charger
+read_excel("C:/Users/Desktop/....") #chemin du fichier Excel
+
+# recoder des données
+Dataframe$Question1.bis <- ifelse(  #iflese = créer une nouvelle colonne nommée Question1.bis dans le dataframe.
+  Dataframe$Question1 %in% c("0", "1", "2"),  
+  "Non",
+  ifelse(
+    Dataframe$Question1 %in% c("3", "4"),
+    "Oui",  #On recode les items de Q1 = 0,1,2 en Non et les items 3 et 4 en Ouidans une nouvelle Question Q1.bis 
+    as.character(Dataframe$Question1)  # Assurez-vous que la variable est de type caractère
+  )
+)
+#Recodé une seule donnée
+Dataframe$Question1.bis <- ifelse(
+  Dataframe$Question1 == "variable 1",
+  "Variable 1.bis",
+  ifelse(
+    Dataframe$Question1 == "variable 2",
+    "Variable 2.bis",
+    NA  # Valeur par défaut si aucune condition n'est remplie
+  )
+)
